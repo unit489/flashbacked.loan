@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="icon32.jpg" sizes="32x32">
+    <link rel="icon" href="icon180.jpg" sizes="180x180">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flashbacked</title>
+    <link rel="stylesheet" href="style.css">
+
+    <meta property="og:title" content="Flashbacked">
+    <meta property="og:description" content="This website contains playable Flash projects sourced from popular platforms like Newgrounds. Additional sites and formats may be added in the future.">
+    <meta property="og:image" content="https://flashbacked.loan/icon180.jpg">
+    <meta property="og:url" content="https://flashbacked.loan/">
+    <meta name="theme-color" content="#CA0000">
+</head>
+<body>
+
+    <header>
+        <h1>FLASHBACKED - Flash Archive & Collection</h1>
+    </header>
+
+    <div class="container">
+        <aside>
+            <h2>BROWSE</h2>
+
+            <!-- Platform selector (populated dynamically) -->
+            <select id="platform" onchange="loadCurrent()">
+                <option value="">Loading platforms...</option>
+            </select>
+
+            <select id="type" onchange="loadCurrent()">
+                <option value="Games" selected>Games</option>
+                <option value="Movies">Movies</option>
+            </select>
+
+            <select id="rating" onchange="loadCurrent()">
+                <option value="Everyone" selected>Everyone</option>
+                <option value="Teen">Teen</option>
+                <option value="Mature">Mature</option>
+            </select>
+
+            <button onclick="loadCurrent()">REFRESH LIST</button>
+        </aside>
+
+        <main>
+            <h2 id="path">Select a platform...</h2>
+
+            <div id="content-area">
+                <div id="list-container">
+                    <div class="list-header">Available Flash Files:</div>
+                    <ul id="list">
+                        <li style="color:#ffdddd;">Loading files...</li>
+                    </ul>
+                </div>
+
+                <div id="player-area">
+                    <div id="player-controls">
+                        <button onclick="clearPlayer()">RETURN TO LIST</button>
+                    </div>
+                    <div id="player"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="main.js"></script>
+    <script src="ruffle/ruffle.js"></script>
+
+</body>
+</html>

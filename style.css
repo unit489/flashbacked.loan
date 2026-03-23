@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@700;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #ff0000 0%, #b30000 40%, #660000 100%);
+    color: #fff;
+    font-family: 'Orbitron', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+header {
+    background: rgba(0,0,0,0.7);
+    padding: 12px 20px;
+    text-align: center;
+    border-bottom: 4px solid #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    z-index: 10;
+}
+
+.subtitle {
+    font-size: 15px;
+    margin-top: 4px;
+    color: #ffcccc;
+}
+
+.container {
+    display: flex;
+    height: calc(100vh - 100px);
+}
+
+aside {
+    width: 300px;
+    background: rgba(0,0,0,0.75);
+    border-right: 5px solid #ffffff;
+    padding: 15px;
+    overflow-y: auto;
+    z-index: 5;
+}
+
+aside h2 {
+    color: #ffffff;
+    text-shadow: 2px 2px #990000;
+    margin-bottom: 15px;
+}
+
+button,
+select {
+    background: linear-gradient(#e60000, #990000);
+    color: #ffffff;
+    border: 3px solid #ffffff;
+    padding: 12px;
+    margin: 8px 0;
+    width: 100%;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    cursor: pointer;
+    text-shadow: 1px 1px #000;
+    transition: background 0.2s;
+}
+
+button:hover,
+select:hover {
+    background: linear-gradient(#ff3333, #cc0000);
+}
+
+select {
+    appearance: none;
+    background: #990000 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpolygon points='0,0 12,0 6,12' fill='white'/%3E%3C/svg%3E") no-repeat right 10px center;
+    padding-right: 30px;
+}
+
+select option {
+    background: #000;
+    color: #fff;
+    padding: 8px;
+}
+
+select option:checked,
+select option:hover {
+    background: #c00;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#path {
+    font-size: 24px;
+    padding: 20px 20px 12px;
+    background: #990000;
+    color: #ffdddd;
+    text-shadow: 3px 3px #660000;
+    z-index: 10;
+}
+
+#content-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+#list-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px 20px 40px;
+    background: rgba(0,0,0,0.3);
+}
+
+.list-header {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #ffff99;
+    text-shadow: 2px 2px #660000;
+}
+
+#list {
+    list-style: none;
+}
+
+#list li {
+    background: rgba(200,0,0,0.35);
+    margin: 10px 0;
+    padding: 12px;
+    border: 2px solid #ffffff;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 14px;
+}
+
+#list li:hover {
+    background: rgba(255,80,80,0.6);
+}
+
+#player-area {
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    background: #000;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+}
+
+#player-controls {
+    padding: 10px 20px;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#player {
+    flex: 1;
+    width: 100%;
+    max-width: 90vw;
+    height: 100%;
+    min-height: 400px;
+    margin: 0 auto;
+    background: #000;
+    position: relative;
+}
+
+#player ruffle-player {
+    position: absolute !important;
+    inset: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    display: block !important;
+}
+
+.now-playing {
+    position: absolute;
+    bottom: 8px;
+    left: 8px;
+    background: rgba(0,0,0,0.7);
+    color: #ffff00;
+    padding: 5px 10px;
+    font-size: 13px;
+    z-index: 6;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    text-align: center;
+    padding: 6px;
+    font-size: 12px;
+    color: #ffdddd;
+    z-index: 10;
+}
